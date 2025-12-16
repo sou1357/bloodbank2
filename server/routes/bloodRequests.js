@@ -1,7 +1,10 @@
 import express from 'express';
 import { PrismaClient } from '@prisma/client';
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 
+dotenv.config();
+const secret = process.env.JWT_SECRET || "fallback_secret_key_123";
 const router = express.Router();
 const prisma = new PrismaClient();
 
@@ -12,7 +15,7 @@ const authMiddleware = async (req, res, next) => {
       return res.status(401).json({ error: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, secret);
     const user = await prisma.user.findUnique({
       where: { id: decoded.userId },
       include: { organizationProfile: true }

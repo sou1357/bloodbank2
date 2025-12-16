@@ -187,15 +187,6 @@ router.get('/me', async (req, res) => {
       include: {
         organizationProfile: true,
         donorProfile: true
-      },
-      select: {
-        id: true,
-        name: true,
-        email: true,
-        role: true,
-        profile_image: true,
-        organizationProfile: true,
-        donorProfile: true
       }
     });
 
