@@ -1,6 +1,6 @@
 # LifeFlow - Blood Bank Management System
 
-A comprehensive blood bank management system with role-based access control.
+A comprehensive blood bank management system with role-based access control, featuring both web dashboard and mobile application.
 
 ## Features
 
@@ -10,17 +10,22 @@ A comprehensive blood bank management system with role-based access control.
   - Blood Banks (manage inventory)
   - Donors (track donations)
 - **SQLite Database** with Prisma ORM
-- **Beautiful UI** with Tailwind CSS and Lucide Icons
+- **Web Dashboard** with React, Vite, and Tailwind CSS
+- **Mobile App** with React Native (Expo) for donors
 
 ## Project Structure
 
 ```
 lifeflow/
-├── client/          # React frontend (Vite + JSX)
+├── client/          # React web dashboard (Vite + JSX)
 ├── server/          # Express backend (Node.js)
 │   ├── prisma/      # Database schema and migrations
 │   ├── routes/      # API routes
 │   └── server.js    # Express server
+├── mobile/          # React Native mobile app (Expo)
+│   ├── screens/     # Mobile screens
+│   ├── services/    # API services
+│   └── navigation/  # Navigation setup
 └── README.md
 ```
 
@@ -62,6 +67,17 @@ Client runs on http://localhost:5173
 npm run build
 ```
 
+### Running the Mobile App (Donor)
+
+See the [mobile app documentation](./mobile/README.md) for detailed setup instructions.
+
+**Quick Start:**
+1. Navigate to mobile directory: `cd mobile`
+2. Install dependencies: `npm install`
+3. Update API URL in `services/api.js` with your machine's IP
+4. Start the app: `npm start`
+5. Scan QR code with Expo Go app on your phone
+
 ## User Roles
 
 ### Blood Banks
@@ -81,10 +97,18 @@ npm run build
 
 ## Tech Stack
 
+### Web Dashboard
 - **Frontend:** React, Vite, Tailwind CSS, Lucide Icons
 - **Backend:** Node.js, Express
 - **Database:** SQLite with Prisma
 - **Auth:** JWT tokens
+
+### Mobile App (Donor)
+- **Framework:** React Native with Expo
+- **Navigation:** React Navigation (Stack + Bottom Tabs)
+- **HTTP Client:** Axios
+- **Storage:** AsyncStorage
+- **Styling:** React Native StyleSheet
 
 ## API Endpoints
 

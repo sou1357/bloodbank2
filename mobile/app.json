@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "LifeFlow Donor",
+    "slug": "lifeflow-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#DC2626"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lifeflow.donor"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#DC2626"
+      },
+      "package": "com.lifeflow.donor"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
